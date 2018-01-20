@@ -1,6 +1,6 @@
 %% Recording sound;
 freq = 44100;
-time = 3;
+time = 5;
 bits = 24;
 recObj = audiorecorder(freq,bits,1);
 disp('Start speaking.')
