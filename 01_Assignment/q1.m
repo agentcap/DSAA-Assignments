@@ -1,5 +1,6 @@
+%A = imread('cameraman.tif');
 A = imread('blur.jpg');
-B = RESIZEN(A,2);
+B = RESIZEBL(A,2);
 sz = size(B);
 
 figure

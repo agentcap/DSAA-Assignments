@@ -7,6 +7,8 @@ A = repmat(1:len,len,1);
 A = A + ndgrid(0:len-1,0:len-1);
 A = inp(A);
 
-B = reshape(out(1:len),len,1);
+B = out(1:len)';
 
-X = round(inv(A) * B)
+X = round(inv(A) * B);
+
+X = X(len:-1:1)'
