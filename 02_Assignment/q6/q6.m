@@ -11,11 +11,14 @@ for i = 1:size(p,1)
     b = p(i,2);
     c = p(i,3);
     d = p(i,4);
+    
     idx = [uint64((a-1)*n/4)+1:uint64(a*n/4) , uint64((b-1)*n/4)+1:uint64(b*n/4) ,uint64((c-1)*n/4)+1:c*n/4,uint64((d-1)*n/4)+1:d*n/4];
     temp_fft = inp_fft(idx);
+    subplot(6,4,i)
+    plot(abs(fftshift(temp_fft)));
 
     temp = ifft(temp_fft).';
 
-    pause(3.0);
-    sound(abs(temp),32000)
+%     pause(3.0);
+%     sound(abs(temp),32000)
 end

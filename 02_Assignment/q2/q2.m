@@ -8,6 +8,8 @@ n = size(x,2);
 sound(x,fs);
 f = fft(x);
 
+[val,idx] = sort(abs(f));
+idx = idx(n:-1:1);
 %% Find frequency
 norm = n/fs;
 if idx(1) <= 1 + n/2
@@ -26,8 +28,6 @@ end
 %% Cleaning the noise
 
 clean_f = zeros(1,n);
-[val,idx] = sort(abs(f));
-idx = idx(n:-1:1);
 
 clean_f(idx(1)) = f(idx(1));
 clean_f(idx(2)) = f(idx(2));
